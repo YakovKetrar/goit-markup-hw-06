@@ -25,9 +25,10 @@ img {
     --gray: #757575;
     --black: #212121;
     --white: #FFFFFF;
-    --backgrd: rgba(47, 48, 58, 0.8);
+    --backgrd: #2F303A;
     --gray2: #F5F4FA;
     --gray3: #AFB1B8;
+    --gray0-6: rgba(255, 255, 255, 0.6);
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
@@ -195,6 +196,116 @@ nav {
 
 }
 
+/* ---------------modal------------------ */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 99;
+
+    opacity: 1;
+    transition: opacity 250ms var(--timing-function);
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+    transform: translate(-50%,-50%) scale(0.9);
+    transition: transform 250ms var(--timing-function);
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    background: var(--white);
+    transition: transform 250ms var(--timing-function);
+
+    width: 528px;
+    height: 581px;
+}
+.modal-close {
+    padding: 5px 5px;
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background: none;
+}
+.modal-close svg {
+    height: 10px;
+    width: 10px;
+}
+
+.form-contacts {
+    padding: 40px 40px;
+}
+.form-contacts b{
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--black);
+}
+.form-contacts li {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.form-contacts label{
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    margin-bottom: 4px;
+    color: var(--gray);
+}
+.form-contacts input {
+    height: 40px;
+    padding-left: 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.form-contacts svg {
+    position: absolute;
+    left: 16px;
+    bottom: 14px;
+    height: 12px;
+    width: 12px;
+    fill: currentColor;
+}
+.form-contacts textarea {
+    resize: none;
+    padding: 12px 16px;
+    height: 120px;
+    font-size: 14px;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    color: var(--black);
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.form-contacts textarea::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.form-contacts-checkbox label {
+    height: 16px;
+    width: 16px;
+}
 
 /*----------------dvantages------------------*/
 .advantages {
@@ -398,7 +509,45 @@ nav {
 }
 .footer-flex {
     display: flex;
+    position: relative;
 }
+
+.logo-in-footer {
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color:  var(--white);
+    
+}
+.logo-in-footer span {
+    color:  var(--blue);
+} 
+.address {
+    margin-top: 20px;
+    
+    font-style: normal;
+}
+.address a {
+    display: block;
+    
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    color: var(--gray0-6);
+}
+.address a:first-child {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    color:  var(--white);
+}
+.address a:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+
 .join-us {
     margin-left: 70px;
     padding-top: 12px;
@@ -438,90 +587,58 @@ nav {
     padding: 12px 12px;
     fill: var(--white);
 }
+.subscribe {
+    padding-top: 12px;
+    position: absolute;
+    right: 0;
+}
+.subscribe p{
+    margin-bottom: 20px;
 
-.logo-in-footer {
-    font-family: Raleway;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.03em;
-    color:  var(--white);
-    
+    text-transform: uppercase;
+    color: var(--white);
 }
-.logo-in-footer span {
-    color:  var(--blue);
-} 
-.address {
-    margin-top: 20px;
+.subscribe-form {
+    display: flex;
+    height: 50px;
+}
+.subscribe-form-input {
+    width: 358px;
+    padding:  16px 15px;
+    margin-right: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    color: var(--gray0-6);
+    background-color: var(--backgrd);
+}
+.subscribe-form-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    font-style: normal;
-}
-.address a {
-    display: block;
+    width: 200px;
+    padding: 10px 29px;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-    font-size: 14px;
-    line-height: 1.7;
-    letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6);
-}
-.address a:first-child {
-    font-size: 14px;
-    line-height: 1.7;
-    letter-spacing: 0.03em;
-    color:  var(--white);
-}
-.address a:not(:last-child) {
-    margin-bottom: 9px;
-}
+    color: var(--white);
+    background-color: var(--blue);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
 
-/* ---------------modal------------------ */
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 99;
-
-    opacity: 1;
-    transition: opacity 250ms var(--timing-function);
 }
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-.backdrop.is-hidden .modal {
-    transform: translate(-50%,-50%) scale(0.9);
-    transition: transform 250ms var(--timing-function);
-}
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(1);
-    background: var(--white);
-    transition: transform 250ms var(--timing-function);
-
-    width: 528px;
-    height: 581px;
-}
-.modal-close {
-    padding: 5px 5px;
-    width: 30px;
-    height: 30px;
-
-    position: absolute;
-    right: 8px;
-    top: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    background: none;
-}
-.modal-close svg {
-
-    height: 10px;
-    width: 10px;
+.subscribe-form-button svg {
+    height: 20px;
+    width: 20px;
+    fill: currentColor;
 }
 
 /* Портфолио */

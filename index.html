@@ -298,12 +298,61 @@
                     </a>
                 </div>  
             </div>
-            
+            <div class="subscribe">
+                <p>Подпишитесь на рассылку</p>
+                 <form class="subscribe-form">
+                    <input class="subscribe-form-input" type="email" name="email" placeholder="E-mail">
+                    <button class="subscribe-form-button" type="submit">
+                        <span>Подписаться</span>
+                        <svg>
+                            <use href="./images/icon/sprite.svg#icon-send"></use>
+                        </svg>
+                    </button>
+                 </form>
+            </div>
         </div>
     </footer>
+
     <!-- Модальное окно -->
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
+            <form class="form-contacts">
+            <b>Оставьте свои данные, мы вам перезвоним</b>
+            <ul>
+                <li>
+                    <label>Имя</label>
+                    <input type="text" name="name" id="name">
+                    <svg>
+                        <use href="./images/icon/sprite.svg#label-name"></use>
+                    </svg>
+                </li>
+                <li>
+                    <label>Телефон</label>
+                    <input type="text" name="name" id="name">
+                    <svg>
+                        <use href="./images/icon/sprite.svg#label-tell"></use>
+                    </svg>
+                </li>
+                <li>
+                    <label>Почта</label>
+                    <input type="text" name="name" id="name">
+                    <svg>
+                        <use href="./images/icon/sprite.svg#label-mail"></use>
+                    </svg>
+                </li>
+                <li>
+                    <label>Комментарий </label>
+                    <textarea name="comment" id="comment" placeholder="Введите текст"></textarea>
+                </li>
+                <li class="form-contacts-checkbox">
+                    <input  type="checkbox" name="allow" id="allow">
+                    <label  for="allow">cоглашаюсь с рассылкой и принимаю 
+                        <a class="form-link" href="#" target="_blank" rel="noopener noreferrer">Условия договора</a>
+                      </label>
+                </li>
+            </ul>
+
+            </form>
             <button class="modal-close" data-modal-close>
                 <svg>
                     <use href="./images/icon/sprite.svg#close"></use>
