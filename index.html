@@ -317,40 +317,49 @@
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
             <form class="form-contacts">
-            <b>Оставьте свои данные, мы вам перезвоним</b>
-            <ul>
-                <li>
-                    <label>Имя</label>
-                    <input type="text" name="name" id="name">
-                    <svg>
-                        <use href="./images/icon/sprite.svg#label-name"></use>
-                    </svg>
-                </li>
-                <li>
-                    <label>Телефон</label>
-                    <input type="text" name="name" id="name">
-                    <svg>
-                        <use href="./images/icon/sprite.svg#label-tell"></use>
-                    </svg>
-                </li>
-                <li>
-                    <label>Почта</label>
-                    <input type="text" name="name" id="name">
-                    <svg>
-                        <use href="./images/icon/sprite.svg#label-mail"></use>
-                    </svg>
-                </li>
-                <li>
-                    <label>Комментарий </label>
-                    <textarea name="comment" id="comment" placeholder="Введите текст"></textarea>
-                </li>
-                <li class="form-contacts-checkbox">
-                    <input  type="checkbox" name="allow" id="allow">
-                    <label  for="allow">cоглашаюсь с рассылкой и принимаю 
-                        <a class="form-link" href="#" target="_blank" rel="noopener noreferrer">Условия договора</a>
-                      </label>
-                </li>
-            </ul>
+                <b>Оставьте свои данные, мы вам перезвоним</b>
+                <ul>
+                    <li class="form-contacts-field">
+                        <label>Имя
+                            <input type="text" name="name" id="name">
+                            <svg class="form-contacts-svg">
+                                <use href="./images/icon/sprite.svg#label-name"></use>
+                            </svg>
+                        </label>
+                    </li>
+                    <li class="form-contacts-field">
+                        <label>Телефон
+                            <input type="text" name="name" id="name">
+                            <svg class="form-contacts-svg">
+                                <use href="./images/icon/sprite.svg#label-tell"></use>
+                            </svg>
+                        </label>
+                    </li>
+                    <li class="form-contacts-field">
+                        <label>Почта
+                            <input type="text" name="name" id="name">
+                            <svg class="form-contacts-svg">
+                                <use href="./images/icon/sprite.svg#label-mail"></use>
+                            </svg>
+                        </label>
+                    </li>
+                    <li class="form-contacts-field">
+                        <label>Комментарий 
+                            <textarea name="comment" id="comment" placeholder="Введите текст"></textarea>
+                        </label>
+                    </li>
+                    <li class="form-contacts-checkbox">
+                        <label  for="allow">
+                            <input  type="checkbox" name="allow" id="allow">
+                            <span class="form-contacts-checkbox-icon"></span>
+                            cоглашаюсь с рассылкой и принимаю 
+                            <a class="form-link" href="#">Условия договора</a>
+                        </label>
+                    </li>
+                </ul>
+                <button class="form-contacts-button">
+                    Отправить
+                </button>
 
             </form>
             <button class="modal-close" data-modal-close>
