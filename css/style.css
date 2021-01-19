@@ -260,10 +260,10 @@ nav {
     letter-spacing: 0.03em;
     color: var(--black);
 }
-.form-contacts-field {
+.form-field {
     margin-bottom: 10px;
 }
-.form-contacts-field label{
+.form-field label{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -273,7 +273,7 @@ nav {
 
     color: var(--gray);
 }
-.form-contacts-field input {
+.form-field input {
     margin-top: 4px;
     height: 40px;
     padding-left: 42px;
@@ -282,12 +282,12 @@ nav {
     border-radius: 4px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-contacts-field input:focus,
-.form-contacts-field textarea:focus {
+.form-field input:focus,
+.form-field textarea:focus {
     border: 1px solid var(--blue);
     outline: none;
 }
-.form-contacts-field input:focus ~ .form-contacts-svg {
+.form-field input:focus ~ .form-contacts-svg {
     color: var(--blue);
 }
 .form-contacts-svg {
@@ -315,7 +315,7 @@ nav {
     color: rgba(117, 117, 117, 0.5);
 }
 
-.form-contacts-checkbox label {
+.form-checkbox label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -326,7 +326,7 @@ nav {
     color: var(--gray);
     
 }
-.form-contacts-checkbox-icon {
+.form-checkbox-icon {
     margin-right: 10px;
     height: 16px;
     width: 16px;
@@ -334,19 +334,19 @@ nav {
     border-radius: 3px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-contacts-checkbox input:checked ~ .form-contacts-checkbox-icon {
+.form-checkbox input:checked ~ .form-checkbox-icon {
     border-color: var(--blue);
     background-image: url(../images/icon/icon-check.svg);
     background-size: contain;
     background-color: var(--blue);
     background-origin: border-box;
 }
-.form-contacts-checkbox a {
+.form-checkbox a {
     margin-left: 3px;
     color: var(--blue);
     text-decoration: underline;
 }
-.form-contacts-checkbox input {
+.form-checkbox input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -354,7 +354,7 @@ nav {
 }
 
 
-.form-contacts-button {
+.form-button {
     display: block;
     margin: 30px auto 0 auto;
     height: 50px;
@@ -372,7 +372,7 @@ nav {
     border-radius: 4px;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-contacts-button:hover {
+.form-button:hover {
     box-shadow: 0px 4px 4px var(--button-shadow);
 }
 
